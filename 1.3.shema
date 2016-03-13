@@ -1,0 +1,11 @@
+(define (square x) (* x x))
+
+(define (sum-of-square x y)
+        (+ (square x) (square y))
+)
+
+(define (sum-of-2-larger-squares x y z)
+  (define a (larger x y))
+  (define b (if (= a x) (larger y z) (larger x z)))
+  (sum-of-square a b))
+
