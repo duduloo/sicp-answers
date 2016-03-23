@@ -1,0 +1,13 @@
+(define (pascal row col)
+  (cond ((< row col) (error "unvalid col value"))
+        ((= col 0) 1)
+        ((= col row) 1)
+        (else (+ (pascal (- row 1) (- col 1))
+                 (pascal (- row 1) col)))))
+
+(define (factorial n)
+  (factorial-iter 1 1 n))
+(define (factorial-iter product counter max-count)
+  (if (> counter max-count)
+      product
+      (factorial-iter (* product counter) (+ counter 1) max-count)))

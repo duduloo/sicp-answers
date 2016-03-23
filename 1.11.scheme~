@@ -1,0 +1,12 @@
+(define (f n)
+    (cond ((< n 3) n)
+          (else (+ (f (- n 1)) (* 2 (f (- n 2))) (* 3 (f (- n 3)))))))
+
+(define (fi n)
+    (cond ((< n 3) n)
+          (else (f-iter 2 1 0 (- n 2)))))
+
+(define (f-iter fn1 fn2 fn3 counter)
+    (if (= counter 0)
+        fn1
+        (f-iter (+ fn1 (* 2 fn2) (* 3 fn3)) fn1 fn2 (- counter 1))))
