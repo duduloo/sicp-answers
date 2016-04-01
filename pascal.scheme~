@@ -1,2 +1,0 @@
-(define (pascal row col)
- (cond
